@@ -27,7 +27,7 @@ html.dark #loader-wrapper {
   margin: -75px 0 0 -75px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #E9C1FF;
+  border-top-color: #fbecd7;
   -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -41,7 +41,7 @@ html.dark #loader-wrapper {
   bottom: 5px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #CD88FF;
+  border-top-color: #f3c27c;
   -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }
@@ -55,7 +55,7 @@ html.dark #loader-wrapper {
   bottom: 15px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #A950FF;
+  border-top-color: #eb9822;
   -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
   animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
 }

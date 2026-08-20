@@ -57,6 +57,14 @@
     background-size: 186px 20px !important;
 }
 
+// nprogress (top loading bar) is themed from @kestra-io/ui-libs' $indigo; force orange.
+#nprogress .bar {
+    background: #eb9822 !important;
+}
+#nprogress .peg {
+    box-shadow: 0 0 10px #eb9822, 0 0 5px #eb9822 !important;
+}
+
 html.dark {
     --ks-background-body: #0b0d12;
     --ks-background-card: #131720;
