@@ -13,7 +13,7 @@ COPY webserver webserver
 WORKDIR /source/ui
 RUN npm run build
 
-FROM kestra/kestra:1.3.30
+FROM kestra/kestra:v1.3.30
 
 USER root
 

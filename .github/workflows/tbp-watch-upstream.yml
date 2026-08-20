@@ -19,7 +19,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          base_version=$(sed -n 's/^FROM kestra\/kestra:\([0-9.]*\)$/\1/p' Dockerfile.tbp)
+          base_version=$(sed -n 's/^FROM kestra\/kestra:v\?\([0-9.]*\)$/\1/p' Dockerfile.tbp)
           latest_tag=$(gh api repos/kestra-io/kestra/releases/latest --jq '.tag_name')
           latest_version=${latest_tag#v}
 
