@@ -13,6 +13,7 @@ RUN npm ci
 WORKDIR /source
 COPY ui ui
 COPY webserver webserver
+COPY .git .git
 
 WORKDIR /source/ui
 RUN npm run build
