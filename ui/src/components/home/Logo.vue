@@ -24,7 +24,7 @@
             height: 0;
             padding-top: 10.773%;
             background: url(../../../src/assets/logo.svg) 0 0 no-repeat;
-            background-size: contain;
+            background-size: 100% 100%;
             display: block;
             overflow: unset;
 

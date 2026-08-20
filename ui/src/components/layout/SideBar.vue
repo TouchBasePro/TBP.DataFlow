@@ -170,7 +170,7 @@
                 height: 100%;
                 background: url(../../assets/logo.svg) 0 0 no-repeat;
                 background-position: left center;
-                background-size: contain;
+                background-size: 186px 20px;
                 display: block;
                 transition: 0.2s all;
 

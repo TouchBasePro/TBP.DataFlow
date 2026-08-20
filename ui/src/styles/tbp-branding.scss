@@ -37,12 +37,24 @@
     --el-color-warning: #a95c00;
     --el-color-danger: #c72c37;
     --el-color-info: #2285eb;
+
+    // Kestra's own button theming reads these, not --el-color-primary directly.
+    --ks-button-background-primary: #eb9822;
+    --ks-button-background-primary-hover: #f3c27c;
+    --ks-button-background-primary-active: #bb7a1a;
 }
 
-// Kestra's Logo.vue background-size:contain is lost when this component's
-// scoped CSS chunk isn't loaded (e.g. on the login page); force it globally.
-.logo span.img {
-    background-size: contain !important;
+// Logo.vue/SideBar.vue's own background-size rule is sometimes lost when
+// their scoped CSS chunk isn't loaded (e.g. on the login page), so force
+// correct sizing globally instead of relying on the component's own style.
+// Login/home logo: box aspect ratio already matches the image (padding-top hack).
+.logo:not(#side-menu *) span.img {
+    background-size: 100% 100% !important;
+}
+
+// Sidebar logo: fixed-size box, so size the logo to explicit pixel dimensions.
+#side-menu .logo span.img {
+    background-size: 186px 20px !important;
 }
 
 html.dark {
@@ -62,4 +74,8 @@ html.dark {
     --bs-link-hover-color: #a4c8f8;
     --el-color-primary: #efad4e;
     --el-color-primary-dark-2: #eb9822;
+
+    --ks-button-background-primary: #efad4e;
+    --ks-button-background-primary-hover: #f3c27c;
+    --ks-button-background-primary-active: #eb9822;
 }
