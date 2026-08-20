@@ -22,7 +22,7 @@
         span.img {
             width: 100%;
             height: 0;
-            padding-top: 23.0842912%;
+            padding-top: 10.773%;
             background: url(../../../src/assets/logo.svg) 0 0 no-repeat;
             background-size: contain;
             display: block;
@@ -30,7 +30,7 @@
 
 
             html.dark & {
-                background: url(../../../src/assets/logo-white.svg) 0 0 no-repeat;
+                background: url(../../../src/assets/logo-white.png) 0 0 no-repeat;
             }
         }
         a {

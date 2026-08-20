@@ -1,0 +1,31 @@
+FROM node:22-bookworm-slim AS ui-build
+
+WORKDIR /source
+
+COPY ui/package.json ui/package-lock.json ui/
+WORKDIR /source/ui
+RUN npm ci
+
+WORKDIR /source
+COPY ui ui
+COPY webserver webserver
+
+WORKDIR /source/ui
+RUN npm run build
+
+FROM kestra/kestra:1.3.30
+
+USER root
+
+COPY --from=ui-build --chown=kestra:kestra /source/webserver/src/main/resources/ui /tmp/tbp-ui
+
+RUN mkdir /tmp/kestra-ui \
+    && cd /tmp/kestra-ui \
+    && unzip -q /app/kestra \
+    && rm -rf ui \
+    && cp -R /tmp/tbp-ui ui \
+    && zip -q -r /app/kestra ui \
+    && chown kestra:kestra /app/kestra \
+    && rm -rf /tmp/kestra-ui /tmp/tbp-ui
+
+USER kestra

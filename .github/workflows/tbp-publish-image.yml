@@ -1,0 +1,33 @@
+name: Publish TouchBasePro Kestra image
+
+on:
+  workflow_dispatch:
+    inputs:
+      image_tag:
+        description: Immutable image tag
+        required: true
+        default: 1.3.30-tbp.1
+        type: string
+  push:
+    tags:
+      - 'tbp-v*'
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE: ghcr.io/touchbasepro/kestra
+      IMAGE_TAG: ${{ inputs.image_tag || github.ref_name }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Build and publish
+        run: |
+          docker build --pull --file Dockerfile.tbp --tag "$IMAGE:$IMAGE_TAG" --tag "$IMAGE:${IMAGE_TAG}-${GITHUB_SHA::7}" .
+          docker push "$IMAGE:$IMAGE_TAG"
+          docker push "$IMAGE:${IMAGE_TAG}-${GITHUB_SHA::7}"

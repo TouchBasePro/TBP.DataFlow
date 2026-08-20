@@ -8,12 +8,12 @@
         popperClass="user-select border border-0"
     >
         <template #prefix>
-            <img src="../../../assets/ks-logo-small.svg" width="40" alt="Kestra" class="user-avatar">
+            <img src="../../../assets/tbp-envelope.png" width="40" alt="TouchBasePro" class="user-avatar">
         </template>
         <template #header>
             <el-option :value="{}" class=" list-unstyled">
                 <div class="menu-item">
-                    <img src="../../../assets/ks-logo-small.svg" width="40" alt="Kestra">
+                    <img src="../../../assets/tbp-envelope.png" width="40" alt="TouchBasePro">
                     {{ $t("kestra") }}
                 </div>
             </el-option>

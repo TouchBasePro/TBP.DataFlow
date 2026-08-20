@@ -1,0 +1,59 @@
+:root {
+    --ks-background-body: #ffffff;
+    --ks-background-card: #fafafa;
+    --ks-background-input: #ffffff;
+    --ks-background-left-menu: #f2f2f2;
+    --ks-content-primary: #2b2b2b;
+    --ks-content-secondary: #595959;
+    --ks-content-link: #1968c2;
+    --ks-content-information: #2285eb;
+    --ks-content-running: #457ea1;
+    --ks-content-success: #23836f;
+    --ks-content-warning: #a95c00;
+    --ks-content-error: #c72c37;
+    --ks-border-primary: #e6e6e6;
+    --ks-border-secondary: #d4d4d4;
+
+    --bs-primary: #eb9822;
+    --bs-primary-rgb: 235, 152, 34;
+    --bs-link-color: #1968c2;
+    --bs-link-hover-color: #134e93;
+    --bs-body-font-family: Inter, "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    --bs-font-sans-serif: Inter, "Public Sans", ui-sans-serif, system-ui, sans-serif;
+    --bs-info-rgb: 34, 133, 235;
+    --bs-running-rgb: 69, 126, 161;
+    --bs-success-rgb: 35, 131, 111;
+    --bs-warning-rgb: 251, 206, 94;
+    --bs-danger-rgb: 228, 79, 88;
+
+    --el-color-primary: #eb9822;
+    --el-color-primary-light-3: #f3c27c;
+    --el-color-primary-light-5: #f7d8aa;
+    --el-color-primary-light-7: #fbecd7;
+    --el-color-primary-light-8: #fdf3e3;
+    --el-color-primary-light-9: #fef9f0;
+    --el-color-primary-dark-2: #bb7a1a;
+    --el-color-success: #23836f;
+    --el-color-warning: #a95c00;
+    --el-color-danger: #c72c37;
+    --el-color-info: #2285eb;
+}
+
+html.dark {
+    --ks-background-body: #0b0d12;
+    --ks-background-card: #131720;
+    --ks-background-input: #1c2230;
+    --ks-background-left-menu: #131720;
+    --ks-content-primary: #f5f5f7;
+    --ks-content-secondary: #b8b9c2;
+    --ks-content-link: #6fa9f3;
+    --ks-border-primary: #262d3a;
+    --ks-border-secondary: #353d4d;
+
+    --bs-body-bg: #0b0d12;
+    --bs-card-bg: #131720;
+    --bs-link-color: #6fa9f3;
+    --bs-link-hover-color: #a4c8f8;
+    --el-color-primary: #efad4e;
+    --el-color-primary-dark-2: #eb9822;
+}
