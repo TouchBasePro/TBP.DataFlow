@@ -31,7 +31,10 @@ RUN apt-get update \
     && unzip -q /app/kestra \
     && rm -rf ui \
     && cp -R /tmp/tbp-ui ui \
-    && zip -q -r /app/kestra ui \
+    && mv /app/kestra /app/kestra.zip \
+    && zip -q -r /app/kestra.zip ui \
+    && mv /app/kestra.zip /app/kestra \
+    && chmod +x /app/kestra \
     && chown kestra:kestra /app/kestra \
     && rm -rf /tmp/kestra-ui /tmp/tbp-ui /var/lib/apt/lists/*
 
