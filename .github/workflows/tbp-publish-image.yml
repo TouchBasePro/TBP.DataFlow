@@ -1,4 +1,4 @@
-name: Publish TouchBasePro Kestra image
+name: Publish TBP DataFlow image
 
 on:
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     env:
-      IMAGE: ghcr.io/touchbasepro/kestra
+      IMAGE: ghcr.io/touchbasepro/tbp.dataflow
       IMAGE_TAG: ${{ inputs.image_tag || github.ref_name }}
     steps:
       - uses: actions/checkout@v6
