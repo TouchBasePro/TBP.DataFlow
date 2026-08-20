@@ -24,13 +24,15 @@ USER root
 
 COPY --from=ui-build --chown=kestra:kestra /source/webserver/src/main/resources/ui /tmp/tbp-ui
 
-RUN mkdir /tmp/kestra-ui \
+RUN apt-get update \
+    && apt-get install --no-install-recommends --yes zip unzip \
+    && mkdir /tmp/kestra-ui \
     && cd /tmp/kestra-ui \
     && unzip -q /app/kestra \
     && rm -rf ui \
     && cp -R /tmp/tbp-ui ui \
     && zip -q -r /app/kestra ui \
     && chown kestra:kestra /app/kestra \
-    && rm -rf /tmp/kestra-ui /tmp/tbp-ui
+    && rm -rf /tmp/kestra-ui /tmp/tbp-ui /var/lib/apt/lists/*
 
 USER kestra
