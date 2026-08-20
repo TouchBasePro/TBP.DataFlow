@@ -39,6 +39,12 @@
     --el-color-info: #2285eb;
 }
 
+// Kestra's Logo.vue background-size:contain is lost when this component's
+// scoped CSS chunk isn't loaded (e.g. on the login page); force it globally.
+.logo span.img {
+    background-size: contain !important;
+}
+
 html.dark {
     --ks-background-body: #0b0d12;
     --ks-background-card: #131720;

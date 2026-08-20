@@ -23,6 +23,7 @@ FROM kestra/kestra:v1.3.32
 USER root
 
 COPY --from=ui-build --chown=kestra:kestra /source/webserver/src/main/resources/ui /tmp/tbp-ui
+COPY --from=ui-build --chown=kestra:kestra /source/ui/src/assets/logo.svg /tmp/tbp-logo.svg
 
 RUN apt-get update \
     && apt-get install --no-install-recommends --yes zip unzip \
@@ -31,11 +32,14 @@ RUN apt-get update \
     && unzip -q /app/kestra \
     && rm -rf ui \
     && cp -R /tmp/tbp-ui ui \
+    && cp /tmp/tbp-ui/favicon.ico root/favicon.ico \
+    && cp /tmp/tbp-ui/favicon-192x192.png static/favicon.png \
+    && cp /tmp/tbp-logo.svg static/logo.svg \
     && mv /app/kestra /app/kestra.zip \
-    && zip -q -r /app/kestra.zip ui \
+    && zip -q -r /app/kestra.zip ui root static \
     && mv /app/kestra.zip /app/kestra \
     && chmod +x /app/kestra \
     && chown kestra:kestra /app/kestra \
-    && rm -rf /tmp/kestra-ui /tmp/tbp-ui /var/lib/apt/lists/*
+    && rm -rf /tmp/kestra-ui /tmp/tbp-ui /tmp/tbp-logo.svg /var/lib/apt/lists/*
 
 USER kestra
